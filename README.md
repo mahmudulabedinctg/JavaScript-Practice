@@ -1,1 +1,1 @@
-# JavaScript-Practice
+# <center>[JavaScript Practice](https://mahmudulabedinctg.github.io/JavaScript-Practice/)</center>
