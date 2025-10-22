@@ -35,6 +35,23 @@
     updateSidebar(maxMedia);
 }
 
+{ // Login Form
+    const logPwd = document.querySelector(`#password`);
+    const logEye = document.querySelector(`#eye`);
+
+    logEye.addEventListener(`click`, function () {
+        if (logPwd.type == `password`) {
+            logPwd.type = `text`;
+            logEye.innerHTML = `<i class="bi bi-eye-fill"></i>`;
+            logEye.title = "Hide";
+        } else {
+            logPwd.type = `password`;
+            logEye.innerHTML = `<i class="bi bi-eye-slash-fill"></i>`;
+            logEye.title = "Show";
+        }
+    });
+}
+
 { // Check Number
     let check = document.querySelector(`.card1 #check`);
     let number = document.querySelector(`.card1 #number`);

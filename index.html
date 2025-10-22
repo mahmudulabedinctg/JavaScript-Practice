@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Practice - Mahmudul Abedin</title>
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -43,6 +44,26 @@
         <div id="overlay" aria-hidden="true"></div>
     </header>
     <main>
+        <section id="login">
+            <div class="container">
+                <div class="col-lg-5 mx-auto">
+                    <div class="form">
+                        <h1>Login</h1>
+                        <form action="">
+                            <input type="email" required name="email" id="email" placeholder="Enter Your Email"><br>
+                            <div class="wrapper">
+                                <input class="m-0" type="password" required name="password" id="password" placeholder="Enter Password">
+                                <button id="eye" class="position-absolute" type="button" title="Show"><i class="bi bi-eye-slash-fill"></i></button>
+                            </div>
+                            <button type="submit">Login</button>
+                        </form>
+                        <a href="#">Forgotten password?</a>
+                        <hr>
+                        <a href="#">Create new account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="home">
             <div class="container">
                 <div class="row">
