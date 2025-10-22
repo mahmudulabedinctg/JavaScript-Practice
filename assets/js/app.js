@@ -1,3 +1,40 @@
+{ // Navbar
+    const sidebar = document.getElementById(`sidebar`);
+    const openBtn = document.getElementById(`open-sidebar-button`);
+    const closeBtn = document.getElementById(`close-sidebar-button`);
+    const overlay = document.getElementById(`overlay`);
+    const maxMedia = window.matchMedia("(width <= 991px)");
+
+    function openSidebar() {
+        sidebar.classList.add('active');
+        overlay.style.display = "block";
+        openBtn.setAttribute('aria-expanded', 'true');
+        sidebar.removeAttribute('inert');
+    }
+    function closeSidebar() {
+        sidebar.classList.remove('active');
+        overlay.style.display = "none";
+        openBtn.setAttribute('aria-expanded', 'false');
+        sidebar.setAttribute('inert', '');
+    }
+    openBtn.addEventListener(`click`, openSidebar);
+    closeBtn.addEventListener(`click`, closeSidebar);
+    overlay.addEventListener(`click`, closeSidebar);
+
+    maxMedia.addEventListener('change', (e) => updateSidebar(e));
+    function updateSidebar(e) {
+        const isMobile = e.matches;
+        if (isMobile) {
+            sidebar.setAttribute('inert', '');
+        }
+        else {
+            // desktop device
+            sidebar.removeAttribute('inert');
+        }
+    }
+    updateSidebar(maxMedia);
+}
+
 { // Check Number
     let check = document.querySelector(`.card1 #check`);
     let number = document.querySelector(`.card1 #number`);

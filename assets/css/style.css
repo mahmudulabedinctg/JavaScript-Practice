@@ -1,3 +1,7 @@
+:root {
+    --bg-gradient: radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -42,6 +46,91 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+/* Navbar Start */
+
+nav {
+    background: rgb(120, 120, 120);
+    color: white;
+}
+
+.sidebar {
+    background: rgb(120, 120, 120);
+    margin-left: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 22px;
+}
+
+.nav-item {
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: white;
+}
+
+nav button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        fill: white;
+    }
+}
+
+#open-sidebar-button {
+    margin-left: auto;
+}
+
+#close-sidebar-button {
+    margin: 14px 20px 14px auto;
+}
+
+#overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -120%;
+        z-index: 100;
+        height: 100vh;
+        width: 250px;
+        box-shadow: -10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.5s ease-in-out;
+    }
+
+    #open-sidebar-button,
+    #close-sidebar-button {
+        display: block;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Navbar End */
+
 #home {
     margin: 20px 0 20px 0;
 }
@@ -58,7 +147,7 @@ input::-webkit-inner-spin-button {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    background: radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent);
+    background: var(--bg-gradient);
     border: none;
     border-radius: 18px;
 }
@@ -126,12 +215,13 @@ input::-webkit-inner-spin-button {
     }
 }
 
-#home .card3{
-    input{
+#home .card3 {
+    input {
         width: 30%;
         margin-top: 12px;
     }
-    button{
+
+    button {
         width: 20%;
     }
 }
